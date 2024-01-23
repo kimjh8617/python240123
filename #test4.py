@@ -1,7 +1,7 @@
 #test4.py
 
-print(111)
-print(1111111)
+# print(111)
+# print(1111111)
 
 
 print ("---반복구문---")
@@ -18,4 +18,9 @@ for item in lst:
 lst = list( range(1,11))
 print(lst)
 for item in lst:
-    print("Item : {0}".format(item))
+    print("Item : {0}".format(item))\
+
+
+
+
+
