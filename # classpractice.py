@@ -17,3 +17,23 @@ p1. name = "전우치"
 # 3. 메서드 호출
 p1.print()
 p2.print()
+
+
+
+# # 전역변수
+# strName = "전역변수의 값"
+
+# class Demo:
+#     def __init__(self):
+#         self.strname()
+
+
+
+
+#실행시간에 변수 추가
+
+Person.title = "new title"
+print(p1.title)
+print(p2.title)
+print(Person.title)
+
