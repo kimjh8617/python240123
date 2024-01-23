@@ -37,3 +37,8 @@ print(p1.title)
 print(p2.title)
 print(Person.title)
 
+
+Person.title = "new title"
+print(p1.title)
+print(p2.title)
+print(Person.title)
