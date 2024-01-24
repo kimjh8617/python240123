@@ -32,4 +32,11 @@ f.close()
 # f = open("")
 # f.read 
 
+encode encode encode encode 
+
+
+
+
+
+
 
