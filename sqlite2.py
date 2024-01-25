@@ -2,14 +2,14 @@
 
 import sqlite3 as sq
 
-#연결객체
-# con = sq.connect ("c:\\work\\test.db")
-con = sq.connect (":memory:")
+#연결객체 (실제 파일에 저장)
+con = sq.connect ("c:\\work\\sample.db")
+# con = sq.connect (":memory:")
 
 #커서
 cur = con.cursor()
-#테이블을 생성
-cur.execute("create table PhoneBook (name text, phoneNum text);")
+#테이블을 생성(테이블이 없는 경우)
+cur.execute("create table if  not exists PhoneBook (name text, phoneNum text);")
 #1건을 입력
 cur.execute("insert into PhoneBook values ('김길동', '010-222');")
 #입력 파라메터 처리
@@ -30,14 +30,18 @@ cur.executemany("insert into PhoneBook values (?, ?);", (datalist))
 
 
 #검색
-cur.execute("select * from PhoneBook;")
-# for row in cur:
-#     print(row)
+cur.execute("select * from PhoneBook  order by name;")
+for row in cur:
+    print(row)
 
-print("----fetchone()----")
-print(cur.fetchone())
-print("----fetchmant(3)----")
-print(cur.fetchmany(3))
-print("----fetchall()----")
-print(cur.fetchall())
-cur.exxcute("select")
+#작업을 정상적으로 완료
+con.commit()
+
+# print("----fetchone()----")
+# print(cur.fetchone())
+# print("----fetchmant(3)----")
+# print(cur.fetchmany(3))
+# print("----fetchall()----")
+# print(cur.fetchall())
+# cur.execute("select" * from PhoneBook;)
+# print(cur.fetchall())
