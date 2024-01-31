@@ -1,0 +1,26 @@
+from pandas import DataFrame
+import pandas as pd
+
+#첫 번째 데이터 프레임
+data = [
+    ["컴퓨터와주변기기", "044380", "주연테크", 784],
+    ["교육서비스", "072870", "메가스터디", 11390],
+    ["컴퓨터와주변기기", "129890", "앱코", 4860]
+]
+
+columns = ["업종", "종목코드", "종목명", "현재가"]
+df1 = DataFrame(data=data, columns=columns)
+
+#두 번째 데이터 프레임
+data = [
+    ["건설", -0.41],
+    ["자동차", -0.45],
+    ["교육서비스", -0.27],
+    ["컴퓨터와주변기기", 1.35]
+]
+
+columns = ["업종", "등락률"]
+df2 = DataFrame(data=data, columns=columns)
+
+print(df1)
+print(df2)
